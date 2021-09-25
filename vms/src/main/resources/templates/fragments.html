@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="html_head">
+
+    <title>Vehicle Management System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+    crossorigin="anonymous">
+
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+  <div th:fragment="menu">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    
+     <li class="nav-item">
+        
+        <a th:href = "@{/}" class="nav-link"><i class="fa fa-home"></i> HOME </a>
+        
+      </li>
+      
+      <li class="nav-item">
+        
+        <a th:href = "@{/vehicle}" class="nav-link"><i class="fa fa-car"></i> VEHICLES </a>
+      </li>
+      <li class="nav-item">
+        
+        <a th:href = "@{/driver}" class="nav-link"><i class="fa fa-users"></i> DRIVERS </a>
+      </li>
+     
+     
+      <li class="nav-item">
+        
+        <a th:href = "@{/getInfo}" class="nav-link"><i class="fa fa-key" aria-hidden="true"></i>
+ RELATIONSHIP </a>
+      </li>
+       
+    </ul>
+    
+  </div>
+</nav>
+    
+    </div>           
+      
+
+</body>
+</html>

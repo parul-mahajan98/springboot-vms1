@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: html_head"/>
+
+<body>
+<div th:replace="fragments :: menu"></div>
+<div class="container">
+
+<hr>
+<h2>Save Vehicle</h2>
+<form action="#" th:action="@{/saveVehicle}" th:object = "${vehicle}" method="POST" >
+   
+   <input 
+   type="text" 
+   th:field = "*{vehicle_Name}" 
+   placeholder="Vehicle name" 
+   class="form-control mb-4 col-4" 
+   th:classappend="${#fields.hasErrors('vehicle_Name')?'is-invalid':''}">
+    <div th:each="e : ${#fields.errors('vehicle_Name')}" th:text="${e}" id="validationServer03Feedback" class="invalid-feedback"></div>
+    
+   
+    
+    <input 
+    type="text" 
+    th:field = "*{vehicle_Model}" 
+    placeholder="Vehicle model" 
+    class="form-control mb-4 col-4" 
+    
+    th:classappend="${#fields.hasErrors('vehicle_Model')?'is-invalid':''}">
+    <div th:each="e : ${#fields.errors('vehicle_Model')}" th:text="${e}" id="validationServer03Feedback" class="invalid-feedback"></div>
+    
+    <input type="text" 
+    th:field = "*{vehicle_Year}" 
+    placeholder="Vehicle year" 
+    class="form-control mb-4 col-4" 
+    th:classappend="${#fields.hasErrors('vehicle_Year')?'is-invalid':''}">
+    <div th:each="e : ${#fields.errors('vehicle_Year')}" th:text="${e}" id="validationServer03Feedback" class="invalid-feedback"></div>
+    
+    
+    <input type="text" 
+    th:field = "*{chassis_Number}" 
+    placeholder="Chassis number" 
+    class="form-control mb-4 col-4" 
+    th:classappend="${#fields.hasErrors('chassis_Number')?'is-invalid':''}">
+    <div th:each="e : ${#fields.errors('chassis_Number')}" th:text="${e}" id="validationServer03Feedback" class="invalid-feedback"></div>
+    
+    <input type="text" 
+    th:field = "*{registration_Number}" 
+    placeholder="Registration number" 
+    class="form-control mb-4 col-4" 
+   
+    th:classappend="${#fields.hasErrors('registration_Number')?'is-invalid':''}">
+    <div th:each="e : ${#fields.errors('registration_Number')}" th:text="${e}" id="validationServer03Feedback" class="invalid-feedback"></div>
+    
+    <input type="text" 
+    th:field = "*{fuel_Type}" 
+    placeholder="Fuel type" 
+    class="form-control mb-4 col-4" 
+    
+    th:classappend="${#fields.hasErrors('fuel_Type')?'is-invalid':''}">
+    <div th:each="e : ${#fields.errors('fuel_Type')}" th:text="${e}" id="validationServer03Feedback" class="invalid-feedback"></div>
+    
+    
+    <button class="btn btn-primary my-2 my-sm-2" type="submit">Save</button>
+
+    <button class="btn btn-secondary my-2 my-sm-2" type="reset" style="margin:5px">Reset</button>
+
+</form>
+<br>
+<a th:href = "@{/vehicle}"> Back to Vehicle List</a>
+
+</div>
+</body>
+</html>

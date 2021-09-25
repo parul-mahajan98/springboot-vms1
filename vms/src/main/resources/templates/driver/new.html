@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: html_head"/>
+
+<body>
+<div th:replace="fragments :: menu"></div>
+<div class="container">
+
+<hr>
+<h2>Save Driver</h2>
+<form action="#" th:action="@{/saveDriver}" th:object = "${driver}" method="POST">
+<input type="text" th:field = "*{firstname}" 
+    placeholder="Firstname" class="form-control mb-4 col-4"
+   th:classappend="${#fields.hasErrors('firstname')?'is-invalid':''}">
+    <div th:each="e : ${#fields.errors('firstname')}" th:text="${e}" id="validationServer03Feedback" class="invalid-feedback"></div>
+    
+    
+    <input type="text" th:field = "*{lastname}" 
+    placeholder="Lastname" class="form-control mb-4 col-4"
+   th:classappend="${#fields.hasErrors('lastname')?'is-invalid':''}">
+    <div th:each="e : ${#fields.errors('lastname')}" th:text="${e}" id="validationServer03Feedback" class="invalid-feedback"></div>
+    
+    
+    <input type="text" th:field = "*{dob}" 
+    placeholder="Date Of Birth(YYYY-MM-DD)" class="form-control mb-4 col-4"
+   th:classappend="${#fields.hasErrors('dob')?'is-invalid':''}">
+    <div th:each="e : ${#fields.errors('dob')}" th:text="${e}" id="validationServer03Feedback" class="invalid-feedback"></div>
+    
+    
+    <input type="text" th:field = "*{address}" 
+   placeholder="Address" class="form-control mb-4 col-4"
+   th:classappend="${#fields.hasErrors('address')?'is-invalid':''}">
+    <div th:each="e : ${#fields.errors('address')}" th:text="${e}" id="validationServer03Feedback" class="invalid-feedback"></div>
+    
+    
+<!--    <form action="/action_page.php">
+    <label>Upload_License</label>
+    <input type="file" th:field = "*{upload_License}" 
+    id="myFile" name="filename"aria-describedby="validationServer03Feedback" required 
+   th:classappend="${#fields.hasErrors('upload_License')?'is-invalid':''}">
+    <div th:each="e : ${#fields.errors('upload_License')}" th:text="${e}" id="validationServer03Feedback" class="invalid-feedback"></div>
+  -->  
+  
+   <form action="/action_page.php">
+    <label>Upload_License</label>
+    <input type="file" th:field = "*{upload_License}" 
+    id="myFile" name="filename">
+    <br><br>
+    
+    
+    
+    <input type="text" th:field = "*{license_Number}" 
+    placeholder="License_Number" class="form-control mb-4 col-4" 
+   th:classappend="${#fields.hasErrors('license_Number')?'is-invalid':''}">
+    <div th:each="e : ${#fields.errors('license_Number')}" th:text="${e}" id="validationServer03Feedback" class="invalid-feedback"></div>
+    
+    
+    <input type="text" th:field = "*{license_expiry_date}" 
+    placeholder="License_Expirydate(YYYY-MM-DD)" class="form-control mb-4 col-4" 
+   th:classappend="${#fields.hasErrors('license_expiry_date')?'is-invalid':''}">
+    <div th:each="e : ${#fields.errors('license_expiry_date')}" th:text="${e}" id="validationServer03Feedback" class="invalid-feedback"></div>
+    
+    
+    <input type="text" th:field = "*{vehicles}" 
+    placeholder="Vehicles(Id)" class="form-control mb-4 col-4">
+    
+    
+    
+    <button class="btn btn-primary my-2 my-sm-2" type="submit" >Save</button>
+
+    <button class="btn btn-secondary my-2 my-sm-2" type="reset" style="margin:5px">Reset</button>
+
+</form>
+
+<br>
+<a th:href = "@{/driver}"> Back to Driver List</a>
+</div>
+</body>
+</html>
